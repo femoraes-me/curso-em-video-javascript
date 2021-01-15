@@ -3,24 +3,36 @@ function contar() {
     let fim = document.getElementById('fim') 
     let passo = document.getElementById('passo') 
 
-    let resultado = document.getElementById('resultado')
+    let resultado = document.getElementById('resultado')    
 
-
-    if (inicio.value.lenght == 0) {
-        window.alert('Campo Vazio')
+    if (inicio.value.length == 0 || fim.value.length == 0 || fim.value.length == 0) {
+        resultado.innerHTML += `IMPOSSÍVEL CONTAR \u{1F3C1}`
+        window.alert('[ERRO] Existem Não Preenchidos!')
     } else {
-        let i = Number(inicio.value)
-        let f = Number(fim.value)
-        let p = Number(passo.value) 
+
+        resultado.innerHTML = `Contando: <br>`
 
         resultado.style.textAlign = 'center'
         resultado.style.padding = '10px'
 
-        resultado.innerHTML = `Contando <br>`
+        let i = Number(inicio.value)
+        let f = Number(fim.value)
+        let p = Number(passo.value) 
         
-        while (i <= f) {
-            resultado.innerHTML += `${i}, `
-            i++   
+        if (i < f) {
+            //contagem crescente
+            for (let c = i; c <= f; c += p) {
+                resultado.innerHTML += `${c} \u{1F449}`
+            }
+        } else  {
+            //contagem decrescente
+            for (let c = i; c <= f; c -= p) {
+                resultado.innerHTML += `${c} \u{1F449}`
+            }    
         }
+        
+        
+
+        resultado.innerHTML += `FIM! \u{1F3C1}`
     }    
 }
