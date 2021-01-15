@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo.css">
-    <title>Modelo de Exercício</title>
+    <title>Vamos Contar</title>
 </head>
 <body>
     
     <header>
-        <h1>Título</h1>
+        <h1>Vamos Contar</h1>
     </header>
 
     <section>
-        <div>Div 1</div>
-        <div>Div 2</div>
+        <div>
+            <p>Inicio: <input type="number" name="inicio" id="inicio"></p>
+            <p>Fim: <input type="number" name="fim" id="fim"></p>
+            <p>Passo: <input type="number" name="passo" id="passo"></p>
+            <button type="submit" onclick="contar()">Contar</button>
+        </div>
+        <div id="resultado"></div>
     </section>
 
     <footer>
