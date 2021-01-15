@@ -1,21 +1,26 @@
 function contar() {
-    var inicio = document.getElementById('inicio') 
-    var fim = document.getElementById('fim') 
-    var passo = document.getElementById('passo') 
+    let inicio = document.getElementById('inicio') 
+    let fim = document.getElementById('fim') 
+    let passo = document.getElementById('passo') 
 
-    var resultado = document.getElementById('resultado')
+    let resultado = document.getElementById('resultado')
 
-    var i = Number(inicio.value)
-    var f = Number(fim.value)
-    var p = Number(passo.value) 
 
-    resultado.style.textAlign = 'center'
-    resultado.style.padding = '10px'
+    if (inicio.value.lenght == 0) {
+        window.alert('Campo Vazio')
+    } else {
+        let i = Number(inicio.value)
+        let f = Number(fim.value)
+        let p = Number(passo.value) 
 
-    resultado.innerHTML = `Contando <br>`
-    
-    while (i <= f) {
-        resultado.innerHTML += `${i}, `
-        i++   
-    }
+        resultado.style.textAlign = 'center'
+        resultado.style.padding = '10px'
+
+        resultado.innerHTML = `Contando <br>`
+        
+        while (i <= f) {
+            resultado.innerHTML += `${i}, `
+            i++   
+        }
+    }    
 }
