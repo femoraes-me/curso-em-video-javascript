@@ -17,6 +17,10 @@ section {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
 }
 
+select#numList {
+  width: 200px;
+}
+
 footer {
   color: #f1f1f1;
   text-align: center;
